@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import AddMessage from './AddMessage';
 import Message from './Message';
 
 let id = 6;
@@ -25,21 +26,8 @@ function Chat() {
 					<Message key={index} message={message} />
 				))}
 			</ul>
-
-			<form
-				onSubmit={(e) => {
-					e.preventDefault();
-					addMessage(e.target.message.value);
-					e.target.reset();
-				}}
-			>
-				<input
-					className="message-input"
-					name="message"
-					placeholder="Type a message"
-					required
-				/>
-			</form>
+      <AddMessage addMessage={addMessage}/>
+			
 		</div>
 	);
 }
